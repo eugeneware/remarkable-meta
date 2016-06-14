@@ -25,7 +25,7 @@ function meta(md, state, start, end, silent) {
 
   if (line >= end) return false
 
-  md.meta = YAML.safeLoad(data.join('\n')) || {};
+  md.meta = YAML.safeLoad(data.join('\n'), {json: true}) || {};
 
   state.line = line + 1
   return true
